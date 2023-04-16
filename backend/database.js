@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
-const mongoURL = "";
+require("dotenv").config();
+const mongoURL = `mongodb+srv://moinbhokare7:${process.env.MONGODB_PASSWORD}@transcribe-askgpt.hlzxypi.mongodb.net/?retryWrites=true&w=majority`;
 const mongoDB = async () => {
-  await mongoose.connect({ useNewUrlParser: true }, async (err, result) => {
-    if (err) {
+  await mongoose
+    .connect(mongoURL, { useNewUrlParser: true })
+    .then(() => {
+      console.log("Database Connected Successfully !!");
+    })
+    .catch((err) => {
       console.log("!! ERROR !!");
       console.log(err);
-    } else {
-      console.log("Database Connected Successfully !!");
-    }
-  });
+    });
 };
 module.exports = mongoDB;

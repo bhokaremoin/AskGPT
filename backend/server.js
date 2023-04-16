@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 5000;
-const mongoDB = require("./database");
+const mongoDB = require("./database.js");
 mongoDB();
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -11,7 +11,7 @@ app.use((req, res, next) => {
   );
 });
 app.use(express.json());
-app.use("/api", require("./Routes/api"));
+app.use("/api", require("./Routes/api.js"));
 app.get("/", (req, res) => {
   res.send("Backend Server for AskGPT Application");
 });
