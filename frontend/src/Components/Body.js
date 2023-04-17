@@ -4,13 +4,13 @@ import Button from "@mui/material/Button";
 import { Box, Typography } from "@mui/material";
 const Body = () => {
   const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState();
+  const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [gotAnswer, setGotAnswer] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await fetch(`http://localhost:5000/api/getAnswer`, {
+    const response = await fetch("http://localhost:5000/api/getAnswer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,6 +23,7 @@ const Body = () => {
     } else {
       setAnswer(data.answer);
       setLoading(false);
+      setGotAnswer(true);
     }
   };
   const handleChange = (e) => {
@@ -45,7 +46,7 @@ const Body = () => {
           </Button>
         </Box>
         <Typography variant="body1" gutterBottom>
-          {answer}
+          {setGotAnswer && answer}
         </Typography>
       </div>
     </div>

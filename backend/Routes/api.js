@@ -4,9 +4,9 @@ const qaFun = require("../index.js");
 
 router.post("/getAnswer", async (req, res) => {
   let question = req.body.question;
-  const ans = qaFun(question);
-  console.log(ans);
   try {
+    const ans = await qaFun(question);
+    res.send({ success: true, answer: ans });
   } catch (error) {
     console.log(error);
     res.json({ success: false });

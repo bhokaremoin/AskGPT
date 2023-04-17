@@ -20,7 +20,6 @@ const RecursiveCharacterTextSplitter =
 const Document = require("langchain/document").Document;
 const fs = require("fs");
 const qaFun = async (question) => {
-  console.log(question);
   const pinecone = new PineconeClient();
   await pinecone.init({
     apiKey: process.env.PINECONE_API_KEY,
@@ -57,6 +56,7 @@ const qaFun = async (question) => {
     question: query,
   });
   console.log({ resA });
+  return resA.text;
   // console.log("done");
 };
 // qaFun("is regression a new development");
