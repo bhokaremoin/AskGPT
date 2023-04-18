@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import "../styles/body.css";
+// import "../styles/body.css";
+import "bootstrap/dist/css/bootstrap.css";
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 const Body = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -29,7 +32,7 @@ const Body = () => {
   };
   return (
     <div>
-      <div className="body">
+      <div className="container-fluid">
         <input
           className="input-area"
           id="outlined-textarea"
@@ -40,7 +43,7 @@ const Body = () => {
           onChange={handleChange}
         />
         {loading ? (
-          <button className="btn" disabled>
+          <button className="btn-primary" disabled>
             Loading
           </button>
         ) : (
