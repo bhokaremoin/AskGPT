@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-// import "../styles/body.css";
-import "bootstrap/dist/css/bootstrap.css";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { Box, Typography } from "@mui/material";
+import "../styles/style.css";
 const Body = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -24,16 +20,17 @@ const Body = () => {
       alert("Something Went Wrong!\nTry Again");
     } else {
       setAnswer(data.answer);
-      setLoading(false);
       setGotAnswer(true);
     }
+    setLoading(false);
   };
   const handleChange = (e) => {
     setQuestion(e.target.value);
   };
   return (
     <div>
-      <div className="container-fluid">
+      <div className="body container-fluid justify-content-center">
+        <p className="text-area">{gotAnswer && answer}</p>
         <input
           className="input-area"
           id="outlined-textarea"
@@ -44,15 +41,14 @@ const Body = () => {
           onChange={handleChange}
         />
         {loading ? (
-          <button className="btn-primary" disabled>
+          <button className="btn btn-secondary" disabled>
             Loading
           </button>
         ) : (
-          <button className="btn" variant="contained" onClick={handleSubmit}>
+          <button className="btn btn-primary" onClick={handleSubmit}>
             Get Answer
           </button>
         )}
-        <p className="text-area">{gotAnswer && answer}</p>
       </div>
     </div>
   );

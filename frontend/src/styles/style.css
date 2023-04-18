@@ -1,0 +1,44 @@
+.heading{
+    text-align: center;
+    /* background-color: #0b0c10; */
+    margin: 0;
+    padding: 30px;
+}
+.title{
+    margin: 0;
+    color: #d1e8e2;
+    font-family: 'Sedgwick Ave Display', cursive;
+    letter-spacing: 10px;
+    font-size: 100px;
+}
+
+#root{
+
+    background-image: url("../../public/textured.jpg");
+}
+.body{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    /* background-color: #4e4e50; */
+    /* background-image: linear-gradient(to top right,#0b0c10,#1f2833,#0b0c10); */
+}
+.input-area{
+    margin: 10px;
+    width: 80%;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #c5c6c7;
+}
+.btn{
+    background-color: #45a29e;
+    padding: 8px;
+    font-size: 20px;
+    margin: 10px;
+    width: 80%;
+    color: #0b0c10;
+    border-color: #c5c6c7;
+}
+.btn:hover{
+    background-color: #c5c6c7;
+}

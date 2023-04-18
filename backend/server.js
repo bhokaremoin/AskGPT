@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 5000;
 const mongoDB = require("./database.js");
-mongoDB();
+mongoDB(true);
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header(
