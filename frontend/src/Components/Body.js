@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { Box, Typography } from "@mui/material";
+import "../styles/body.css";
 const Body = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -22,32 +20,35 @@ const Body = () => {
       alert("Something Went Wrong!\nTry Again");
     } else {
       setAnswer(data.answer);
-      setLoading(false);
       setGotAnswer(true);
     }
+    setLoading(false);
   };
   const handleChange = (e) => {
     setQuestion(e.target.value);
   };
   return (
     <div>
-      <div>
-        <Box component="form" onSubmit={handleSubmit} noValidate>
-          <TextField
-            id="outlined-textarea"
-            label="Multiline Placeholder"
-            placeholder="Placeholder"
-            multiline
-            value={question}
-            onChange={handleChange}
-          />
-          <Button variant="contained" onClick={handleSubmit}>
-            Contained
-          </Button>
-        </Box>
-        <Typography variant="body1" gutterBottom>
-          {setGotAnswer && answer}
-        </Typography>
+      <div className="body">
+        <input
+          className="input-area"
+          id="outlined-textarea"
+          label="Ask Question"
+          placeholder="Example: What is Regression Testing ? "
+          multiline
+          value={question}
+          onChange={handleChange}
+        />
+        {loading ? (
+          <button className="btn" disabled>
+            Loading
+          </button>
+        ) : (
+          <button className="btn" variant="contained" onClick={handleSubmit}>
+            Get Answer
+          </button>
+        )}
+        <p className="text-area">{gotAnswer && answer}</p>
       </div>
     </div>
   );
