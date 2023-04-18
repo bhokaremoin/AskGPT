@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 // import "../styles/body.css";
 import "bootstrap/dist/css/bootstrap.css";
-// Put any other imports below so that CSS from your
-// components takes precedence over default styles.
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { Box, Typography } from "@mui/material";
 const Body = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -23,9 +24,9 @@ const Body = () => {
       alert("Something Went Wrong!\nTry Again");
     } else {
       setAnswer(data.answer);
+      setLoading(false);
       setGotAnswer(true);
     }
-    setLoading(false);
   };
   const handleChange = (e) => {
     setQuestion(e.target.value);

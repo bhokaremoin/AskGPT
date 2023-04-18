@@ -1,14 +1,13 @@
 require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
 const fs = require("fs");
-const path = require("path");
 async function transcribe() {
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
   const openai = new OpenAIApi(configuration);
   const resp = await openai.createTranscription(
-    fs.createReadStream("audio1.mp3"),
+    fs.createReadStream("audio.mp3"),
     "whisper-1"
   );
   console.log(resp.data.text);
@@ -25,4 +24,5 @@ async function saveFile() {
     console.log("JSON file has been saved.");
   });
 }
+
 saveFile();
