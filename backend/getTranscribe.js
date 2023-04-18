@@ -16,7 +16,7 @@ async function transcribe() {
   // console.log(resp.data.text);
   return resp.data.text;
 }
-async function saveFile() {
+async function uploadFile() {
   const jsonContent = await transcribe();
   const jsonString = JSON.stringify(jsonContent);
   fs.writeFile("transcribe.txt", jsonString, function (err) {
@@ -51,4 +51,5 @@ async function saveFile() {
   }
   mongoDB(false);
 }
-saveFile();
+// module.exports = uploadFile;
+uploadFile();

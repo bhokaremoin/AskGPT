@@ -6,11 +6,10 @@ const RecursiveCharacterTextSplitter =
 const Document = require("langchain/document").Document;
 const OpenAIEmbeddings =
   require("langchain/embeddings/openai").OpenAIEmbeddings;
-const fs = require("fs");
-const mongoDB = require("./database");
 const TranscribeData = require("./models/TranscribeData");
-mongoDB(true);
+const mongoDB = require("./database");
 const createVectorStore = async () => {
+  mongoDB(true);
   const pinecone = new PineconeClient();
   await pinecone.init({
     apiKey: process.env.PINECONE_API_KEY,
@@ -44,3 +43,4 @@ const createVectorStore = async () => {
   mongoDB(false);
 };
 createVectorStore();
+// module.exports = createVectorStore;
