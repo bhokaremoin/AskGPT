@@ -10,7 +10,7 @@ async function transcribe() {
   });
   const openai = new OpenAIApi(configuration);
   const resp = await openai.createTranscription(
-    fs.createReadStream("audio.mp3"),
+    fs.createReadStream("compressedAudio.mp3"),
     "whisper-1"
   );
   // console.log(resp.data.text);
