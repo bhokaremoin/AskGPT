@@ -1,61 +1,104 @@
 # AskGPT
+<div align="center>
+<img src="" />
+</div>
 
-Introduction
-A web application where the user can ask question to the ai related to the youtube video and get solve their query and question without the need to rewatch the video
-It uses OpenAI Wishper API to generate the Transcript of the youtube video and langchain along with pinecone to create a vector store of documents using the open ai embeddings
-
-Technologies Used
+## Introduction
+AskGPT is Web Application where the user can ask AI question related to a Youtube Video and AI answers based on the transcript of that video.
+## Technologies Used
 This application uses the following technologies:
-OpenAI's Whisper API for generating transcripts and answering questions.
-Pinecone for vector search.
-Langchain for language translation.
-MongoDB for storing data.
-Express for server-side JavaScript.
-React for client-side JavaScript.
-Node.js for server-side JavaScript.
+### BACKEND
+* ffmpeg library to generate audio file of the Youtube video.
+* OpenAI's Whisper API for generating transcripts from the audio file.
+* Pinecone for creating vector store and performing vector search.
+* Langchain to integrate OpenAI APIs and Pinecone database.
+* OpenAI's LLM's Chains to generate answer in Natural Language.
 
-Installation
+### Web Development
+* MongoDB for storing data.
+* Express for server-side JavaScript.
+* React for client-side JavaScript.
+* Node.js for server-side JavaScript.
 
-First we need to setup the backend, to change the current directory to the backend
+## Setup
+
+Clone this repo into your local environment:
+```bash
+git clone https://github.com/bhokaremoin/AskGPT.git
+```
+
+### Backend
+Change Directory to Backend
+```bash
 cd backend
+```
 
-Then setup the backend by installing the required libaries
-npm init
+Install dependencies:
+```bash
+npm install
+```
 
-now we need to add environment variable that are API KEYs and passwords
-for these create a .env file inside backend folder
-and these these variables
+Create a `.env` file to assignment environment variable using:
+```bash
+touch .env
+```
 
+Open `.env` in your editor and paste below variable name:
+
+```bash
 OPENAI_API_KEY=""
 PINECONE_API_KEY=""
 PINECONE_ENV=""
 PINECONE_INDEX=""
 MONGODB_PASSWORD=""
+```
+You can get these values from below provided links
+<hr />
 
-now to you can the url of the youtube video you want to use
+SignUp at OpenAI [here](https://platform.openai.com/signup).
+Create OpenAI API key [Get Key](https://platform.openai.com/account/api-keys).
+SignUp at Pinecone: [here](https://www.pinecone.io/).
+Get Pinecone API key and environment by navigating to API Keys tab in Pinecone Console.
+<div>
+<img src="" />
+</div>
+Create Pinecone Index by clicking on the Create Index with your Index Name.
+Set dimensions to `1536` and Pod Type to `P1`.
+<div>
+<img src="" />
+</div>
 
-then getAudio.js file to download the audio of the youtube
-node getAudio.js
+Create a cluster on mongoDB, the tutorial for cluster is given [here](https://www.mongodb.com/basics/clusters/mongodb-cluster-setup).
+Now to get audio of the Youtube video and generate the transcript of it and setup the vector store of the transcript, run `setup.js` file
+```bash
+node setup.js
+```
 
-now if the size of the audio is greater than 10MB it cannot be used to generate the transcript and the size for data to be send to the api request if limited to so run compressAudio.js
-node compressAudio.js
-
-once you have the audio ready run getTranscript.js to generate the transcript of the audio file
-node getTranscript.js
-
-now we need to create the Vector Store of Pinecone so run createVectorStore.js
-node createVectorStore.js
-
-now our backend setup is completed.
-now you can run the server of following command
+Now launch the `server`
+```bash
 node server.js
+```
+<hr />
 
-once the server is setup we lanuch the frontend
-for these open a new terminal windows or tab
-and navigate to the root of the project and then change directory to the frontend
+### Frontend
+
+Open new terminal and go to the root directory of the repo and change it to frontend
+```bash
 cd frontend
-now setup the react libararies by running the following code
-npm init
+```
 
-once all library are installed run
+Install dependencies
+```bash
+npm install
+```
+
+Launch the frontend UI
+```bash
 npm start
+```
+The will be running on [localhost:3000](http://localhost:3000).
+
+## Contact
+For any suggestions or technical related question feel free to connect with me.
+* [Linkedin](https://www.linkedin.com/in/moin-bhokare-722b601b0/)
+* [moinbhokare7@gmail.com](mailto:moinbhokare7@gmail.com)
