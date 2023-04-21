@@ -23,6 +23,7 @@ const Body = () => {
     );
     const data = await response.json();
     if (!data.success) {
+      console.log(data);
       alert("Something Went Wrong!\nTry Again");
     } else {
       setAnswer(data.answer);
