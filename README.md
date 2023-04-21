@@ -1,10 +1,12 @@
 # AskGPT
-<div align="center>
-<img src="" />
+<div align="center">
+<img src="https://raw.githubusercontent.com/bhokaremoin/AskGPT/main/backend/img/ask-gpt.jpg" />
 </div>
 
 ## Introduction
-AskGPT is Web Application where the user can ask AI question related to a Youtube Video and AI answers based on the transcript of that video.
+AskGPT is Web Application where the user can ask AI question related to a Youtube Video and AI answers based on the transcript of that video. Curently the Youtube video based on which it answers is [video](https://www.youtube.com/watch?v=oL1uem6-3m4).
+
+[Website Live](https://askgpt-ize0.onrender.com/)
 ## Technologies Used
 This application uses the following technologies:
 ### BACKEND
@@ -50,26 +52,37 @@ OPENAI_API_KEY=""
 PINECONE_API_KEY=""
 PINECONE_ENV=""
 PINECONE_INDEX=""
-MONGODB_PASSWORD=""
+MONGODB_URL=""
 ```
 You can get these values from below provided links
 <hr />
 
-SignUp at OpenAI [here](https://platform.openai.com/signup).
-Create OpenAI API key [Get Key](https://platform.openai.com/account/api-keys).
-SignUp at Pinecone: [here](https://www.pinecone.io/).
-Get Pinecone API key and environment by navigating to API Keys tab in Pinecone Console.
+SignUp at OpenAI [here](https://platform.openai.com/signup) and create OpenAI API key [Get Key](https://platform.openai.com/account/api-keys).
+SignUp at Pinecone: [here](https://www.pinecone.io/) and Get Pinecone API key and environment by navigating to API Keys tab in Pinecone Console.
+
 <div>
-<img src="" />
-</div>
-Create Pinecone Index by clicking on the Create Index with your Index Name.
-Set dimensions to `1536` and Pod Type to `P1`.
-<div>
-<img src="" />
+<img src="https://raw.githubusercontent.com/bhokaremoin/AskGPT/main/backend/img/api_key.jpg" />
 </div>
 
+Create Pinecone Index by clicking on the Create Index with your Index Name.<br>
+
+Set dimensions to `1536` `.env` and Pod Type to `P1`.
+<div>
+<img src="https://raw.githubusercontent.com/bhokaremoin/AskGPT/main/backend/img/create_index.jpg" />
+</div>
 Create a cluster on mongoDB, the tutorial for cluster is given [here](https://www.mongodb.com/basics/clusters/mongodb-cluster-setup).
+
+
 Now to get audio of the Youtube video and generate the transcript of it and setup the vector store of the transcript, run `setup.js` file
+<hr />
+You Can change the Youtube Video URL to your video by.
+
+
+Changing the `videoURL` variable in line 6 in `backend/transcriptSetup/getAudio.js`.
+<div>
+  <img src="" />
+  </div>
+<hr />
 ```bash
 node setup.js
 ```
