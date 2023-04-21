@@ -19,13 +19,13 @@ const Body = () => {
       body: JSON.stringify({ question: question }),
     });
     const data = await response.json();
-    if (!data.success) {
-      // console.log(data);
-      alert(data);
-    } else {
-      setAnswer(data.answer);
-      setGotAnswer(true);
-    }
+    // if (!data.success) {
+    //   // console.log(data);
+    //   alert(data);
+    // } else {
+    setAnswer(data.answer);
+    setGotAnswer(true);
+    // }
     setLoading(false);
   };
   const handleChange = (e) => {
