@@ -1,6 +1,5 @@
 .heading{
     text-align: center;
-    /* background-color: #0b0c10; */
     margin: 0;
     padding-top: 20px;
 }
@@ -55,8 +54,8 @@
     width: 60%;
     border: 1px grey solid;
     border-radius: 5px;
-    backdrop-filter: blur(5px);
-    min-height: 40vh;
+    backdrop-filter: blur(7px);
+    min-height: 60vh;
 }
 h3{
     text-align: center;
@@ -77,9 +76,12 @@ h4{
     color: white;
     margin: 10px auto 0;
     padding: 5px;
-    border: 2px solid #45a29e;
+    border: 1px solid white;
+    border-radius: 5px;
     width: 60%;
     font-size: 20px;
+    font-weight: 600;
+    background-color: #affdf869;
 }
 p{
     color: white;

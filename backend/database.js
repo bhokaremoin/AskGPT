@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-const mongoURL = `mongodb+srv://moinbhokare7:${process.env.MONGODB_PASSWORD}@transcribe-askgpt.hlzxypi.mongodb.net/?retryWrites=true&w=majority`;
+const mongoURL = process.env.MONGODB_URL;
 const mongoDB = async (flag) => {
   if (flag) {
     await mongoose
