@@ -80,7 +80,7 @@ You Can change the Youtube Video URL to your video by.
 
 Changing the `videoURL` variable in line 6 in `backend/transcriptSetup/getAudio.js`.
 <div>
-  <img src="" />
+  <img src="https://raw.githubusercontent.com/bhokaremoin/AskGPT/main/backend/img/youtube_url.jpg" />
   </div>
 <hr />
 ```bash
@@ -109,7 +109,7 @@ Launch the frontend UI
 ```bash
 npm start
 ```
-The will be running on [localhost:3000](http://localhost:3000).
+The website will be running on [localhost:3000](http://localhost:3000).
 
 ## Contact
 For any suggestions or technical related question feel free to connect with me.
