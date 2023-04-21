@@ -23,7 +23,7 @@ const Details = () => {
           </Link>
           <Link
             className="col-sm link"
-            to="https://github.com/bhokaremoin/AskGPT"
+            to="https://github.com/bhokaremoin/AskGPT#askgpt"
             target="_blank"
           >
             Documentation
