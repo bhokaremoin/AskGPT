@@ -18,7 +18,7 @@ const getAnswer = async (question) => {
   );
   // const query = "is regression a new development";
   const query = question;
-  const docs = await vectorStore.similaritySearch(query, 4);
+  const docs = await vectorStore.similaritySearch(query);
   // console.log(docs);
 
   const llmA = new OpenAI();

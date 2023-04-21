@@ -11,16 +11,13 @@ const Body = () => {
     setLoading(true);
     // const api_url = "http://localhost:5000/api/getAnswer";
     const api_url = "https://askgpt-server.onrender.com/api/getAnswer";
-    const response = await fetch(
-      "https://askgpt-server.onrender.com/api/getAnswer",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question: question }),
-      }
-    );
+    const response = await fetch(api_url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ question: question }),
+    });
     const data = await response.json();
     if (!data.success) {
       // console.log(data);
